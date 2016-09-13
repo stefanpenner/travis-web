@@ -273,7 +273,7 @@ export default function () {
         {
           name: 'Dashboard',
           description: 'UX improvements over the current implementation',
-          enabled: false
+          enabled: true
         },
         {
           name: 'Make header pink',
