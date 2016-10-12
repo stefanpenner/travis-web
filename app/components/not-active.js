@@ -13,8 +13,13 @@ export default Ember.Component.extend({
 
   user: alias('auth.currentUser'),
 
-  canActivate: Ember.computed('permissions.all', 'repo', function () {
-    return this.get('permissions').hasAdminPermission(this.get('repo'));
+  canActivate: Ember.computed('repo.permissions.enable', function () {
+    let repo = this.get('repo');
+    if (repo) {
+      return repo.get('permissions.enable');
+    } else {
+      return false;
+    }
   }),
 
   activate: task(function* () {
