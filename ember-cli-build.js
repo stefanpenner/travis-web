@@ -45,23 +45,7 @@ module.exports = function () {
       'plugins': ['line-highlight']
     },
     svg: {
-      optimize: [
-        { removeTitle: false },
-        plugins: [
-          {
-            myCustomPlugin: {
-              type: "perItem",
-              fn: function(item) {
-                item.eachAttr(function(attr) {
-                  if (attr.name === 'id') {
-                    item.removeAttr('id')
-                  }
-                });
-              }
-            }
-          }
-        ]
-      ]
+      optimize: false
     }
   });
 
